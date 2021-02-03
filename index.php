@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyGuitarHero</title>
+    <title>PMA</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- FONTS -->
@@ -13,22 +13,12 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 
 
 </head>
 
 <body>
 
-    <div class="col-12">
-        <!-- navbar -->
-        <?php include("./header.php"); ?>
-    </div>
-
-    <!-- header -->
-    <div class="col-12">
-        <?php include("./navbar.php"); ?>
-    </div>
     <main class="container">
 
         <!-- content --></br>
