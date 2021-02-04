@@ -10,6 +10,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
+<<<<<<< HEAD
 SET time_zone = "+00:00";
 
 
@@ -204,6 +205,77 @@ ALTER TABLE `class_course`
 --
 ALTER TABLE `student`
   ADD CONSTRAINT `fk_students_class_name` FOREIGN KEY (`class_name`) REFERENCES `class` (`class_name`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+=======
+USE `progressionapp`;
+INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('WEB', 'PHP & CRUD');
+INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('NED', 'Adjectives');
+INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('ENG', 'Past Simple');
+INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('BUR', 'Vrijheid');
+INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('ASP', 'Essential Training');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `progressionapp`.`student`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `progressionapp`;
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Ahmet', '', 'Erdogan');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Arjan', 'de', 'Ruijter');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Hans', '', 'Odijk');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Cuneyt', '', 'Sterk');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2B', 'Nalinie', '', 'Zwemmer');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2B', 'Yaron', 'van den', 'Nieuwenhuijzen');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2B', 'Ghizlan', 'van der', 'Zon');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2B', 'Tarik', '', 'Comolokko');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2B', 'Talha', '', 'Kiymaz');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1C', 'Orpheo ', '', 'Woortman');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1C', 'Julienne ', '', 'Sneekes');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1C', 'Berry', '', 'Schermer');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1C', 'Kristin ', '', 'Passchier');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1C', 'Pieterdina ', '', 'Boonzaaijer');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1D', 'Pip ', '', 'Creemers');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1D', 'Cherryl ', '', 'Pels');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1D', 'Sheryl ', '', 'Touissaint');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1D', 'Teis', 'van der', 'Wel');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM1D', 'Kenn', '', 'Perquin');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `progressionapp`.`periode`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `progressionapp`;
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P1', 'S1');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P2', 'S1');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P3', 'S2');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P4', 'S2');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P5', 'S3');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P6', 'S3');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P7', 'S4');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P8', 'S4');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P9', 'S5');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P10', 'S5');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P11', 'S6');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P12', 'S6');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `progressionapp`.`class_course`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `progressionapp`;
+INSERT INTO `progressionapp`.`class_course` (`lessons`, `class_name`, `periode`) VALUES ('WEB', 'AM2A', 'P1');
+INSERT INTO `progressionapp`.`class_course` (`lessons`, `class_name`, `periode`) VALUES ('ENG', 'AM1C', 'P5');
+INSERT INTO `progressionapp`.`class_course` (`lessons`, `class_name`, `periode`) VALUES ('NED', 'AM2B', 'P3');
+INSERT INTO `progressionapp`.`class_course` (`lessons`, `class_name`, `periode`) VALUES ('BUR', 'AM1D', 'P7');
+INSERT INTO `progressionapp`.`class_course` (`lessons`, `class_name`, `periode`) VALUES ('ASP', 'AM1D', 'P9');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
