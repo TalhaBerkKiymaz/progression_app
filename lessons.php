@@ -5,7 +5,8 @@
  */
 include("./connect_db.php");
 
-$sql = "SELECT  c.class_name, c.education, c.cohort from class as c GROUP BY c.class_name";
+
+$sql = "SELECT  c.class_name, cc.lessons, c.education from class_course as cc, class as c GROUP BY cc.lessons";
 
 // SELECT  c.class_name, cc.lessons, c.education from class_course as cc, class as c GROUP BY cc.lessons
 // SELECT  c.class_name, cc.lessons, c.education from class_course as cc, class as c where c.class_name = 'am2a' and c.class_name = cc.class_name"
@@ -19,8 +20,8 @@ while ($record = mysqli_fetch_assoc($result)) {
                     <div class='card-body'>
                         <h5 class='card-title'>{$record['class_name']}</h5>
                         <h6 class='card-subtitle mb-2 text-muted'>{$record['education']}</h6>
-                        <p class='card-text'>{$record['cohort']}</p>
-                        <a href='lessons.php' class='card-link'>Card link</a>
+                        <p class='card-text'>{$record['lessons']}</p>
+                        <a href='student.php' class='card-link'>Card link</a>
                         <a href='#' class='card-link'>Another link</a>
                     </div>
                 </div>

@@ -114,7 +114,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `progressionapp`;
-INSERT INTO `progressionapp`.`class` (`class_name`, `education`, `cohort`) VALUES ('am2a', 'AM', 'C2020');
+INSERT INTO `progressionapp`.`class` (`class_name`, `education`, `cohort`) VALUES ('AM2A', 'AM', 'C2020');
+INSERT INTO `progressionapp`.`class` (`class_name`, `education`, `cohort`) VALUES ('AM2B', 'AM', 'C2020');
+INSERT INTO `progressionapp`.`class` (`class_name`, `education`, `cohort`) VALUES ('AM2C', 'AM', 'C2020');
 
 COMMIT;
 
@@ -124,7 +126,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `progressionapp`;
-INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('web', 'php');
+INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('WEB', 'PHP & CRUD');
+INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('NED', 'Adjectives');
+INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('ENG', 'Past Simple');
 
 COMMIT;
 
@@ -134,7 +138,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `progressionapp`;
-INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'am2a', 'ahmet', 'de', 'erdogan');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Ahmet', '', 'Erdogan');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2B', 'Talha', '', 'Kiymaz');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2C', 'Tarik', '', 'Comolokko');
 
 COMMIT;
 
@@ -144,7 +150,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `progressionapp`;
-INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P1', 'S3');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P1', 'S1');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P3', 'S2');
+INSERT INTO `progressionapp`.`periode` (`periode`, `semester`) VALUES ('P5', 'S3');
 
 COMMIT;
 
@@ -154,7 +162,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `progressionapp`;
-INSERT INTO `progressionapp`.`class_course` (`lessons`, `class_name`, `periode`) VALUES ('web', 'am2a', 'P1');
+INSERT INTO `progressionapp`.`class_course` (`lessons`, `class_name`, `periode`) VALUES ('WEB', 'AM2A', 'P1');
+INSERT INTO `progressionapp`.`class_course` (`lessons`, `class_name`, `periode`) VALUES ('ENG', 'AM2C', 'P5');
+INSERT INTO `progressionapp`.`class_course` (`lessons`, `class_name`, `periode`) VALUES ('NED', 'AM2B', 'P3');
 
 COMMIT;
 

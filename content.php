@@ -4,5 +4,4 @@
     }else {
         include("./home.php");
     }
-
 ?>
