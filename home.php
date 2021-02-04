@@ -20,13 +20,13 @@ while ($record = mysqli_fetch_assoc($result)) {
                         <h5 class='card-title'>{$record['class_name']}</h5>
                         <h6 class='card-subtitle mb-2 text-muted'>{$record['education']}</h6>
                         <p class='card-text'>{$record['cohort']}</p>
-                        <a href='index.php?content=lessons' class='card-link'>Card link</a>
+                        <a href='index.php?content=lessons&class={$record['class_name']}' class='card-link'>Vakken</a>
                         <a href='#' class='card-link'>Another link</a>
                     </div>
                 </div>
             </div>";
 
-    var_dump($record);
+    // var_dump($record);
 }
 
 echo $show;

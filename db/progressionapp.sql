@@ -141,7 +141,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `progressionapp`;
+<<<<<<< HEAD
 INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Ahmet', '', 'Erdogan');
+=======
+  INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Ahmet', '', 'Erdogan');
+>>>>>>> d40524f3ff1b46b7e3f3c6e35b8891eadd7e2341
 INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Arjan', 'de', 'Ruijter');
 INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Hans', '', 'Odijk');
 INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Cuneyt', '', 'Sterk');
