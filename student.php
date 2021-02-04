@@ -6,7 +6,10 @@
 include("./connect_db.php");
 
 
-$sql = "SELECT c.student_id, c.firstname, c.infix, c.lastname, cc.lessons, cc.course_name FROM student as c, course as cc group by c.student_id";
+$sql = "SELECT c.student_id, c.firstname, c.infix, c.lastname, cc.lessons, cc.course_name 
+        FROM student as c, course as cc, class_course as ccc
+        group by cc.`lessons`";
+        
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -20,4 +23,6 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 $conn->close();
-?>
+
+
+?>  
