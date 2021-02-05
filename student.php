@@ -38,7 +38,7 @@ while ($record = mysqli_fetch_assoc($result)) {
     <td> {$record['firstname']} </td>
     <td> {$record['infix']} </td>
     <td> {$record['lastname']} </td>
-    <td> <select>
+    <td> <select name='voortgang' id='voortgang'>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -49,11 +49,10 @@ while ($record = mysqli_fetch_assoc($result)) {
           <option value='8'>8</option>
           <option value='9'>9</option>
           <option value='10'>10</option>
-          
-
           </select>
     </td>
-</tr>";
+    </tr>
+    ";
 
   // var_dump($record);
 
@@ -74,6 +73,7 @@ echo $show2;
 
 <div style="padding-top: 25px;">
   <!-- Op deze plek komt de tabel -->
+  <form action="./index.php?content=student_points" method="post">
   <table class="table table-hover">
     <thead>
       <tr>
@@ -89,6 +89,9 @@ echo $show2;
       echo $show;
       ?>
     </tbody>
+    
   </table>
+  <button type='submit' class='btn btn-primary submit' style="align-items: right;">Opslaan</button>
+    </form>
 </div>
 
