@@ -110,9 +110,9 @@ CREATE TABLE IF NOT EXISTS `course` (
 INSERT INTO `course` (`lessons`, `course_name`, `description`) VALUES
 ('ASP', 'Essential Training', 'Dit is een basiscursus Laravel'),
 ('BUR', 'Vrijheid', 'Hier leer je je mening te geven'),
-('ENG', 'Past Simple', 'Test123'),
-('NED', 'Adjectives', '123Test'),
-('WEB', 'PHP & CRUD', 'Testerdetest');
+('ENG', 'Past Simple', 'Hier leer je verleden tijd'),
+('NED', 'Adjectives', 'Adjectives is een woordsoort in de taalkundige benoeming'),
+('WEB', 'PHP & CRUD', 'Hier leer je PHP');
 
 -- --------------------------------------------------------
 
