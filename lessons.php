@@ -11,7 +11,7 @@ $sql = "SELECT  `course`.`description`,`course`.`course_name`, c.class_name, cc.
         from class_course as cc, class as c, course 
         where `course`.`lessons` = cc.`lessons`
         and cc.`class_name` = '" . $class_name  . "'
-        GROUP BY cc.lessons";
+        GROUP BY cc.lessons DESC";
 // echo $sql;exit();
 // SELECT  c.class_name, cc.lessons, c.education from class_course as cc, class as c GROUP BY cc.lessons
 // SELECT  c.class_name, cc.lessons, c.education from class_course as cc, class as c where c.class_name = 'am2a' and c.class_name = cc.class_name"
@@ -34,7 +34,7 @@ while ($record = mysqli_fetch_assoc($result)) {
                     </div>
             </div>";
 
-    var_dump($record);
+//     var_dump($record);
 }
 
 mysqli_data_seek($result,0);
