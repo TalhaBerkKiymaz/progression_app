@@ -2,7 +2,7 @@
 
 /**
  * Omschrijving: Deze pagina geeft alle klassen weer die gekoppeld zijn aan een cursus.
- * Afhankelijk van: class_course/lessons    
+ * Afhankelijk van: class_course/class  
  */
 include("./connect_db.php");
 

@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Omschrijving: Deze pagina geeft alle klassen weer die gekoppeld zijn aan een cursus.
- * Afhankelijk van: class_course/lessons    
+ * Omschrijving: Deze pagina geeft alle studenten weer die gekoppeld zijn aan een klas.
+ * Afhankelijk van: student    
  */
 $class_name = $_GET["class"];
 $lessons = $_GET["lesson"];
-
+// Dit is voor editen en verwijderen van rijjen
 //     <td>
 //         <a href='./index.php?content=update_users&id='  ''>
 //             <img src='./img/icons/b_edit.png' alt=; pencil'>
@@ -20,16 +20,16 @@ $lessons = $_GET["lesson"];
 
 include("./connect_db.php");
 
-
-$sql = "SELECT c.student_id, c.firstname, c.infix, c.lastname, c.class_name, cc.lessons, cc.course_name 
-        FROM student as c, course as cc, class_course as s 
-        WHERE c.`class_name` = '" . $class_name  . "'
-        and s.`lessons` = '" . $lessons  . "'
-        GROUP BY c.student_id ";
+$sql = "SELECT
+       `course`.`course_name`, s.class_name, `course`.`lessons`, s.student_id, s.firstname, s.infix, s.lastname 
+       from class_course as cc, class as c, student as s, course 
+       where `course`.`lessons` = '" . $lessons  . "'
+       and s.`class_name` = '" . $class_name  . "' 
+       GROUP BY s.student_id";
 
 // echo$sql;exit();
 $result = mysqli_query($conn, $sql);
-
+// var_dump($result);
 $show = "<div class='row'>";
 while ($record = mysqli_fetch_assoc($result)) {
   $show .= "
@@ -49,8 +49,7 @@ while ($record = mysqli_fetch_assoc($result)) {
           <option value='8'>8</option>
           <option value='9'>9</option>
           <option value='10'>10</option>
-          <option value='11'>11</option>
-          <option value='12'>12</option>
+          
 
           </select>
     </td>
@@ -58,20 +57,25 @@ while ($record = mysqli_fetch_assoc($result)) {
 
   // var_dump($record);
 
-
-
-  // var_dump($record);
 }
 
-
+mysqli_data_seek($result,0);
+$record = mysqli_fetch_assoc($result);
+// echo "============================";
+// var_dump($record);
+$course = $record["course_name"];
+// var_dump($course);
+$show2 = "<div class='container'>";
+$show2 .= " 
+<h2> $class_name <br> <h4>Vak: $lessons </h4> <h5>Cursus naam: $course </h5>  </h2>";
+echo $show2;
 // echo $show;
 ?>
 
 
 <div class="col-12">
 <div>
-  <h2><?php echo $class_name ?></h2>
-  <h4><?php echo $lessons ?></h4>
+  
 </div>
   <!-- Op deze plek komt de tabel -->
   <table class="table table-hover">
@@ -81,7 +85,7 @@ while ($record = mysqli_fetch_assoc($result)) {
         <th scope="col">Naam</th>
         <th scope="col">Tussenvoegsel</th>
         <th scope="col">Achternaam</th>
-        <th scope="col">Point</th>
+        <th scope="col">Progressie/Modul</th>
       </tr>
     </thead>
     <tbody>
