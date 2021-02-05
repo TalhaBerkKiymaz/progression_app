@@ -22,7 +22,7 @@ $result = mysqli_query($conn, $sql);
 $show = "<div class='row'>";
 while ($record = mysqli_fetch_assoc($result)) {
     $show .= "
-            <div class='col-sm-6'>
+            <div class='col-sm-6' style='padding-top: 20px;'>
                     <div class='card'>
                         <div class='card-body'>
                             <h5 class='card-title'>{$record['lessons']}</h5>
@@ -42,6 +42,6 @@ $record = mysqli_fetch_assoc($result);
 // echo "============================";
 // var_dump($record);
 $class = $record["class_name"];
-echo "<h1>" . $class_name . "</h1>";
+echo "<h1 style='color: red;'>" . $class_name . "</h1>";
 echo $show;
 ?>

@@ -66,17 +66,13 @@ $record = mysqli_fetch_assoc($result);
 $course = $record["course_name"];
 // var_dump($course);
 $show2 = "<div class='container'>";
-$show2 .= " 
+$show2 .= " <div style='padding-top: 75px;'>
 <h2> $class_name <br> <h4>Vak: $lessons </h4> <h5>Cursus naam: $course </h5>  </h2>";
 echo $show2;
 // echo $show;
 ?>
 
-
-<div class="col-12">
-<div>
-  
-</div>
+<div style="padding-top: 25px;">
   <!-- Op deze plek komt de tabel -->
   <table class="table table-hover">
     <thead>
@@ -95,3 +91,4 @@ echo $show2;
     </tbody>
   </table>
 </div>
+
