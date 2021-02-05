@@ -10,7 +10,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
-<<<<<<< HEAD
 SET time_zone = "+00:00";
 
 
@@ -205,7 +204,6 @@ ALTER TABLE `class_course`
 --
 ALTER TABLE `student`
   ADD CONSTRAINT `fk_students_class_name` FOREIGN KEY (`class_name`) REFERENCES `class` (`class_name`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-=======
 USE `progressionapp`;
 INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('WEB', 'PHP & CRUD');
 INSERT INTO `progressionapp`.`course` (`lessons`, `course_name`) VALUES ('NED', 'Adjectives');

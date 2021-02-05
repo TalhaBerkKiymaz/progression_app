@@ -21,19 +21,20 @@ $result = mysqli_query($conn, $sql);
 
 $show = "<div class='row'>";
 while ($record = mysqli_fetch_assoc($result)) {
-    $show .= "<div class='col-3'>
-                <div class= 'card mb-2' style='width: 18rem;'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>{$record['lessons']}</h5>
-                        <h6 class='card-subtitle mb-2 text-muted'>{$record['description']}</h6>
-                        <p class='card-text'>{$record['course_name']}</p>
-                        <a href='student.php' class='card-link'>Card link</a>
-                        <a href='#' class='card-link'>Another link</a>
+    $show .= "
+            <div class='col-sm-6'>
+                    <div class='card'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>{$record['lessons']}</h5>
+                            <p class='card-text'>{$record['course_name']}.</p>
+                            <p class='card-text'><b>{$record['description']}.</b></p>
+                            <p class='text-muted'>Klik hieronder om voortgang van studenten te zien</p>
+                            <a href='index.php?content=student&class=$class_name&lesson={$record['lessons']}' class='btn btn-warning'><b>Voortgang</b></a>
+                         </div>
                     </div>
-                </div>
             </div>";
 
-    // var_dump($record);
+    var_dump($record);
 }
 
 mysqli_data_seek($result,0);
