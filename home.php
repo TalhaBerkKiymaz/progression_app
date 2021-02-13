@@ -1,33 +1,7 @@
-<?php
-/**
- * Omschrijving: Deze pagina geeft alle klassen weer die gekoppeld zijn aan een cursus.
- * Afhankelijk van: class_course/lessons    
- */
-include("./connect_db.php");
-
-$sql = "SELECT  c.class_name, cc.lessons, c.education from class_course as cc, class as c GROUP BY cc.lessons";
-
-// SELECT  c.class_name, cc.lessons, c.education from class_course as cc, class as c GROUP BY cc.lessons
-// SELECT  c.class_name, cc.lessons, c.education from class_course as cc, class as c where c.class_name = 'am2a' and c.class_name = cc.class_name"
-
-$result = mysqli_query($conn, $sql);
-
-$show = "<div class='row'>";
-while ($record = mysqli_fetch_assoc($result)) {
-    $show .= "<div class='col-3'>
-                <div class= 'card mb-2' style='width: 18rem;'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>{$record['lessons']}</h5>
-                        <h6 class='card-subtitle mb-2 text-muted'>{$record['education']}</h6>
-                        <p class='card-text'>{$record['class_name']}</p>
-                        <a href='#' class='card-link'>Card link</a>
-                        <a href='#' class='card-link'>Another link</a>
-                    </div>
-                </div>
-            </div>";
-
-    var_dump($record);
-}
-
-echo $show;
-?>
+<div class="hero-content" style="text-align: center; padding-top: 100px;">
+        <ion-icon name="chatbubbles" style="width: 56px; height: 57px; padding-top: 15px;"></ion-icon>
+        <h1 style="font-size: 105px; " class="headline-1">MBO UTRECHT.</h1>
+        <h5 style="padding-top: 10px; color: rgb(255, 255, 255); font-style:italic; font-size:50px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; ;">
+        Dit is een concept van Progressie Monitor App</h5>
+        <!-- <p class="text-content" style="padding-top: 10px; color: rgb(255, 255, 255); font-style:italic; font-size:20px; font-family: 'Montserrat', sans-serif ;">Attention Deficit Hyperactivity Disorder (ADHD) is niet gemaakt. Het is niet alleen een kinderding. Thuis. Op het werk. In sociale instellingen. ADHD is er 24/7. Het maakt niet uit waar u zich bevindt op uw reis, of u nu denkt dat u ADHD heeft of dat u momenteel wordt behandeld maar u nog steeds symptomen ervaart, weet dat u op de juiste plaats bent om meer te leren.</p> -->
+    </div>
