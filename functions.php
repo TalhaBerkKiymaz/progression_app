@@ -29,7 +29,7 @@
 
 
   function is_authorized($userroles) {
-    if (!isset($_SESSION["id"])) {
+    if (!isset($_SESSION["user_id"])) {
       return header("Location: ./index.php?content=message&alert=auth-error");
     } elseif ( !in_array($_SESSION["userrole"], $userroles)) {
       return header("Location: ./index.php?content=message&alert=auth-error-user");

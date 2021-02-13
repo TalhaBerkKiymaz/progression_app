@@ -35,21 +35,21 @@ if (empty($email) || empty($password)) {
     } else {
       // password matched
      
-      $_SESSION["id"] = $record["id"];
+      $_SESSION["user_id"] = $record["user_id"];
       $_SESSION["userrole"] = $record["userrole"];
 
       switch ($record["userrole"]) {
-        case 'customer':
-          header("Location: ./index.php?content=c-home");
-          break;
-        case 'root':
-          header("Location: ./index.php?content=r-home");
+        case 'teacher':
+          header("Location: ./index.php?content=t-home");
           break;
         case 'admin':
           header("Location: ./index.php?content=a-home");
           break;
-        case 'moderator':
-          header("Location: ./index.php?content=m-home");
+        case 'director':
+          header("Location: ./index.php?content=d-home");
+          break;
+        case 'student':
+          header("Location: ./index.php?content=s-home");
           break;
         default:
           header("Location: ./index.php?content=home");

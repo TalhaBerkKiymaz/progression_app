@@ -13,7 +13,7 @@
     header("Location: ./index.php?content=message&alert=nomatch-password&id=$id&pwh=$pwh");
   } else {
     
-    $sql = "SELECT * FROM `register` WHERE `id` = $id";
+    $sql = "SELECT * FROM `register` WHERE `user_id` = $id";
 
     $result = mysqli_query($conn, $sql);
 
@@ -33,7 +33,7 @@
           $sql = "UPDATE `register` 
                   SET    `password` = '$password_hash',
                          `activated`= 1 
-                  WHERE  `id` = $id
+                  WHERE  `user_id` = $id
                   AND    `password` = '$pwh'";
     
           if (mysqli_query($conn, $sql)) {
