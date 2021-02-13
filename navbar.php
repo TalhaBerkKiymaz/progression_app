@@ -9,38 +9,38 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <?php
-        if (isset($_SESSION["id"])) {
+        if (isset($_SESSION["user_id"])) {
           switch ($_SESSION["userrole"]) {
             case 'admin':
               echo '<li class="nav-item '; echo (in_array($active, ["a-home", ""])) ? "active" : ""; echo '">
-                      <a class="nav-link" href="./index.php?content=a-home">home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="./index.php?content=a-home">a-home <span class="sr-only">(current)</span></a>
                     </li>';
             break;
-            case 'root':
-              echo '<li class="nav-item '; echo (in_array($active, ["r-home", ""])) ? "active" : ""; echo '">
-                      <a class="nav-link" href="./index.php?content=r-home">home <span class="sr-only">(current)</span></a>
+            case 'director':
+              echo '<li class="nav-item '; echo (in_array($active, ["d-home", ""])) ? "active" : ""; echo '">
+                      <a class="nav-link" href="./index.php?content=d-home">d-home <span class="sr-only">(current)</span></a>
                     </li>';
             break;
-            case 'customer':
-              echo '<li class="nav-item '; echo (in_array($active, ["c-home", ""])) ? "active" : ""; echo '">
-                      <a class="nav-link" href="./index.php?content=c-home">home <span class="sr-only">(current)</span></a>
+            case 'teacher':
+              echo '<li class="nav-item '; echo (in_array($active, ["t-home", ""])) ? "active" : ""; echo '">
+                      <a class="nav-link" href="./index.php?content=t-home">t-home <span class="sr-only">(current)</span></a>
                     </li>';
             break;
-            case 'moderator':
-              echo '<li class="nav-item '; echo (in_array($active, ["m-home", ""])) ? "active" : ""; echo '">
-                      <a class="nav-link" href="./index.php?content=m-home">home <span class="sr-only">(current)</span></a>
+            case 'student':
+              echo '<li class="nav-item '; echo (in_array($active, ["s-home", ""])) ? "active" : ""; echo '">
+                      <a class="nav-link" href="./index.php?content=s-home">s-home <span class="sr-only">(current)</span></a>
                     </li>';
             break;
             default:
               echo '<li class="nav-item '; echo (in_array($active, ["home", ""])) ? "active" : ""; echo '">
-                      <a class="nav-link" href="./index.php?content=home">home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="./index.php?content=home">homehome <span class="sr-only">(current)</span></a>
                     </li>';
             break;
 
           }
         } else {
           echo '<li class="nav-item '; echo (in_array($active, ["home", ""])) ? "active" : ""; echo '">
-                  <a class="nav-link" href="./index.php?content=home">home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="./index.php?content=home">home<span class="sr-only">(current)</span></a>
                 </li>';
         }
       ?> 
@@ -63,7 +63,7 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
     </ul>
     <ul class="navbar-nav ml-auto">
       <?php 
-        if (isset($_SESSION["id"])) {
+        if (isset($_SESSION["user_id"])) {
           switch($_SESSION["userrole"]) {
             case 'admin':
               echo '<li class="nav-item dropdown">
@@ -76,17 +76,17 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
                       </div>
                     </li>';
             break;
-            case 'root':
-              echo '<li class="nav-item '; echo ($active == "r-rootpage") ? "active" : ""; echo '">
+            case 'director':
+              echo '<li class="nav-item '; echo ($active == "d-directorpage") ? "active" : ""; echo '">
                       <a class="nav-link" href="./index.php?content=r-rootpage">rootpage</a>
                     </li>';
 
             break;
-            case 'moderator':
+            case 'teacher':
               // Maak hier de hyperlinks voor de gebruikersrol moderator
 
             break;
-            case 'customer':
+            case 'student':
               // Maak hier de hyperlinks voor de gebruikersrol customer
 
             break;

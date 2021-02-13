@@ -104,6 +104,57 @@ CREATE TABLE IF NOT EXISTS `progressionapp`.`class_course` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `progressionapp`.`assigments`
+-- -----------------------------------------------------
+
+USE `progressionapp`;
+CREATE TABLE IF NOT EXISTS `progressionapp`.`assigments` (
+  `id` DECIMAL(3,1) NOT NULL,
+  `lessons` VARCHAR(5) NOT NULL,
+  `description` VARCHAR(255) NOT NULL,
+  `ddline_date` DATE NOT NULL,
+  PRIMARY KEY (`id`),
+    INDEX `fk_assigments_lessons_idx` (`lessons` ASC) ,
+  CONSTRAINT `fk_assigments_lessons`
+    FOREIGN KEY (`lessons`)
+    REFERENCES `progressionapp`.`course` (`lessons`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `progressionapp`.`planning`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `progressionapp`.`planning` ;
+
+CREATE TABLE IF NOT EXISTS `progressionapp`.`planning` (
+  `id` INT UNSIGNED NOT NULL,
+  `assigment_id` DECIMAL(3,1) NOT NULL,
+  `wknr_school` TINYINT(3) UNSIGNED NOT NULL,
+  `wknr_kalender` TINYINT(3) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+    INDEX `fk_planning_assigment_id_idx` (`assigment_id` ASC) ,
+  CONSTRAINT `fk_planning_assigment_id`
+    FOREIGN KEY (`assigment_id`)
+    REFERENCES `progressionapp`.`assigments` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+COMMIT;
+
+USE `progressionapp`;
+DROP TABLE IF EXISTS `register`;
+CREATE TABLE IF NOT EXISTS `register` (
+  `user_id` int(10) NOT NULL AUTO_INCREMENT,
+  `email` varchar(55) NOT NULL,
+  `password` varchar(55) NOT NULL,
+  `userrole` enum('admin','director','teacher','student') NOT NULL,
+  `activated` bit(1) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE= InnoDB;
+COMMIT;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -141,7 +192,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `progressionapp`;
-  INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Ahmet', '', 'Erdogan');
+INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Ahmet', '', 'Erdogan');
 INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Arjan', 'de', 'Ruijter');
 INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Hans', '', 'Odijk');
 INSERT INTO `progressionapp`.`student` (`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (DEFAULT, 'AM2A', 'Cuneyt', '', 'Sterk');

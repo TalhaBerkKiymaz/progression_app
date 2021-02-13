@@ -1,6 +1,6 @@
 <?php
   $alert = (isset($_GET["alert"]))? $_GET["alert"]: "default";
-  $id = (isset($_GET["id"]))? $_GET["id"]: "";
+  $id = (isset($_GET["user_id"]))? $_GET["user_id"]: "";
   $pwh = (isset($_GET["pwh"]))? $_GET["pwh"]: "";
   $email = (isset($_GET["email"]))? $_GET["email"]: "";
   

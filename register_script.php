@@ -19,7 +19,7 @@
       // en geeft dit terug in $array
       $array = mk_password_hash_from_microtime();      
       
-      $sql = "INSERT INTO `register` (`id`,
+      $sql = "INSERT INTO `register` (`user_id`,
                                       `email`,
                                       `password`,
                                       `userrole`,
@@ -27,7 +27,7 @@
               VALUES                 (NULL,
                                       '$email',
                                       '{$array["password_hash"]}',
-                                      'customer',
+                                      'student',
                                       0)";
       // echo $sql;exit();
       if (mysqli_query($conn, $sql)) {
@@ -35,15 +35,15 @@
         $id = mysqli_insert_id($conn);
 
         $to = $email;
-        $subject = "Activatielink voor uw account van am1x-vegetablejuice.org";
+        $subject = "Activatielink voor uw schoolaccount";
         // include("./email.php");
         include("./alt-email.php");
         
         $headers = "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-        $headers .= "From: admin@vegetablejuice.org\r\n";
-        $headers .= "Cc: moderator@vegetablejuice.org\r\n";
-        $headers .= "Bcc: root@vegetablejuice.org";
+        $headers .= "From: admin@progression.org\r\n";
+        $headers .= "Cc: moderator@progression.org\r\n";
+        $headers .= "Bcc: root@progression.org";
         
         mail($to, $subject, $message, $headers);
 
