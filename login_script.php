@@ -15,6 +15,7 @@ if (empty($email) || empty($password)) {
 
   $result = mysqli_query($conn, $sql);
 
+  // echo $result;exit();
   // var_dump((bool) mysqli_num_rows($result));
 
   if (!mysqli_num_rows($result)) {
@@ -37,7 +38,9 @@ if (empty($email) || empty($password)) {
      
       $_SESSION["user_id"] = $record["user_id"];
       $_SESSION["userrole"] = $record["userrole"];
-
+      
+      // echo$record["user_id"];exit();
+      // echo$record["userrole"];exit();
       switch ($record["userrole"]) {
         case 'teacher':
           header("Location: ./index.php?content=t-home");
