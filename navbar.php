@@ -1,7 +1,8 @@
 <?php
 $active = (isset($_GET["content"])) ? $_GET["content"] : "";
 ?>
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+<div class="navbar transparent" id="mainNav">
+<nav class="navbar navbar-expand-md navbar-inner">
   <a class="navbar-brand" href="./index.php?content=home">Vegetable Juice</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -61,7 +62,7 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
         </div>
       </li>
     </ul>
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto navbar-log">
       <?php 
         if (isset($_SESSION["user_id"])) {
           switch($_SESSION["userrole"]) {
@@ -83,11 +84,11 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
 
             break;
             case 'teacher':
-              // Maak hier de hyperlinks voor de gebruikersrol moderator
+              // Maak hier de hyperlinks voor de gebruikersrol teacher
 
             break;
             case 'student':
-              // Maak hier de hyperlinks voor de gebruikersrol customer
+              // Maak hier de hyperlinks voor de gebruikersrol student
 
             break;
             default:
@@ -108,3 +109,4 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
     </ul>
   </div>
 </nav>
+</div>

@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `register`;
 CREATE TABLE IF NOT EXISTS `register` (
   `user_id` int(10) NOT NULL AUTO_INCREMENT,
-  `email` varchar(55) NOT NULL,
-  `password` varchar(55) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `userrole` enum('admin','director','teacher','student') NOT NULL,
   `activated` bit(1) NOT NULL,
   PRIMARY KEY (`user_id`)
