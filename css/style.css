@@ -1,13 +1,16 @@
 #footer {
     min-height: 4em;
-    background-color: yellowgreen;
-    color: white;
+    background-color: transparent;
+    color: #262935;
     text-align: center;
     font-weight: bolder;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background-image: url(/img/school.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 p {
@@ -45,7 +48,7 @@ img::-moz-selection {
 }
 
 #mainNav {
-    background: linear-gradient(to right, transparent, rgb(110, 110, 110), rgb(110, 110, 110), rgb(59, 59, 59), transparent 60%, rgb(110, 110, 110), rgb(110, 110, 110));
+    background: linear-gradient(to right, transparent -5%, rgb(110, 110, 110), rgb(110, 110, 110), rgb(59, 59, 59) 14%, transparent 65%, rgb(110, 110, 110), rgb(110, 110, 110));
 }
 
 #mainNav .navbar-brand {
@@ -143,4 +146,67 @@ img::-moz-selection {
 
 .navbar.transparent.navbar-inverse .navbar-inner {
     background: rgba(0, 0, 0, 0.4);
+}
+
+.text-content {
+    background-color: #6CCCCE;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.form-group {
+    font-weight: bold;
+    width: 500px;
+    height: 420px;
+    color: #000;
+    top: 100%;
+    left: 50%;
+    /* padding: 60px 30px; */
+    position: absolute;
+    transform: translate(-50%, 20%);
+    box-sizing: border-box;
+    box-shadow: 8px 8px 50px #000;
+}
+
+.form-group h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 22px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 8%;
+    transform: translate(0%, 100%);
+}
+
+.form-group input {
+    width: 75%;
+    margin-bottom: 20px;
+    transform: translate(15%, 20%);
+}
+
+.form-group label {
+    width: 75%;
+    margin-bottom: 20px;
+    transform: translate(15%, 20%);
+}
+
+.form-group small {
+    width: 75%;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transform: translate(15%, 20%);
+    color: red;
+}
+
+.form-group button {
+    width: 75%;
+    margin-bottom: 20px;
+    transform: translate(15%, 20%);
+}
+
+.login-picture {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
 }

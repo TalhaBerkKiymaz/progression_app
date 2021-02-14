@@ -10,18 +10,11 @@
 
     <link rel="stylesheet" href="./css/style.css">
 
-    <link rel="shortcut icon" href="./img/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/icons/favicon.png" type="image/x-icon">
     <title>Vegetable Juice</title>
   </head>
   <body>
     <main>
-      <section class="container-fluid">
-        <div class="row">
-          <div class="col-12 px-0">
-            <?php include("./banner.php"); ?>
-          </div>
-        </div>
-      </section>
       <section class="container-fluid">
         <div class="row">
           <div class="col-12 px-0">
