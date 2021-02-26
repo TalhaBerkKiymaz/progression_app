@@ -49,11 +49,12 @@ img::-moz-selection {
 #mainNav {
     width: auto;
     height: auto;
-    background: linear-gradient(to right, transparent -5%, rgb(110, 110, 110), rgb(110, 110, 110), rgb(59, 59, 59) 14%, transparent 65%, rgb(110, 110, 110), rgb(110, 110, 110));
+    /* background: linear-gradient(to right, transparent -5%, rgb(110, 110, 110), rgb(110, 110, 110), rgb(59, 59, 59) 14%, transparent 65%, rgb(110, 110, 110), rgb(110, 110, 110)); */
+    background-color: #293033;
 }
 
 #mainNav .navbar-brand {
-    color: #212529;
+    color: whitesmoke;
     font-family: 'Work Sans', sans-serif;
 }
 
@@ -69,7 +70,7 @@ img::-moz-selection {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #212121;
+    color: whitesmoke;
     font-family: 'Work Sans', sans-serif;
 }
 
@@ -86,7 +87,7 @@ img::-moz-selection {
     #mainNav {
         transition: padding-top 0.3s, padding-bottom 0.3s;
         border: none;
-        background-color: transparent;
+        background-color: #293033;
     }
     #mainNav .navbar-brand {
         font-size: 2em;
