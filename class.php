@@ -1,5 +1,6 @@
 <?php
-
+include("./functions.php");
+is_authorized(["admin", "teacher", "director",]);
 /**
  * Omschrijving: Deze pagina geeft alle klassen weer die gekoppeld zijn aan een cursus.
  * Afhankelijk van: class_course/class  

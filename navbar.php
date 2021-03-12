@@ -30,7 +30,7 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
               echo '<li class="nav-item ';
               echo (in_array($active, ["t-home", ""])) ? "active" : "";
               echo '">
-                      <a class="nav-link" href="./index.php?content=t-home">t-home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="./index.php?content=class">Klassen Overzichten <span class="sr-only">(current)</span></a>
                     </li>';
               break;
             case 'student':
@@ -56,7 +56,7 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
                 </li>';
         }
         ?>
-        <li class="nav-item <?php echo ($active == "juices") ? "active" : "" ?>">
+        <!-- <li class="nav-item <?php echo ($active == "juices") ? "active" : "" ?>">
           <a class="nav-link" href="./index.php?content=juices">juices</a>
         </li>
         <li class="nav-item <?php echo ($active == "smoothies") ? "active" : "" ?>">
@@ -71,7 +71,7 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
             <a class="dropdown-item <?php echo ($active == "nutrition") ? "active" : "" ?>" href="./index.php?content=nutrition">nutrition</a>
             <a class="dropdown-item <?php echo ($active == "exercise") ? "active" : "" ?>" href="./index.php?content=exercise">exercise</a>
           </div>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav ml-auto navbar-log">
         <?php

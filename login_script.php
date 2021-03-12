@@ -43,16 +43,16 @@ if (empty($email) || empty($password)) {
       // echo$record["userrole"];exit();
       switch ($record["userrole"]) {
         case 'teacher':
-          header("Location: ./index.php?content=t-home");
+          header("Location: ./index.php?content=home");
           break;
         case 'admin':
-          header("Location: ./index.php?content=a-home");
+          header("Location: ./index.php?content=home");
           break;
         case 'director':
-          header("Location: ./index.php?content=d-home");
+          header("Location: ./index.php?content=home");
           break;
         case 'student':
-          header("Location: ./index.php?content=s-home");
+          header("Location: ./index.php?content=home");
           break;
         default:
           header("Location: ./index.php?content=home");
