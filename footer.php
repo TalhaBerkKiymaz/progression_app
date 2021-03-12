@@ -1,3 +1,3 @@
 <div id="footer">
-  == copyright progressionapp ==
+   ProgressionApp&copy; 2021
 </div>

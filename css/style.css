@@ -1,37 +1,30 @@
-#footer {
-    min-height: 4em;
-    background-color: transparent;
-    color: #262935;
-    text-align: center;
-    font-weight: bolder;
-}
-
-#mainNav nav div .navbar-nav .nav-reg {
-    color: #8E9DCC;
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
     background-image: url(/img/school.jpg);
     -webkit-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
 }
 
-p {
-    line-height: 1.75;
+#footer {
+    min-height: 2em;
+    background-color: transparent;
+    color: whitesmoke;
+    text-align: center;
+    font-weight: bolder;
+    background: linear-gradient(to right, transparent -5%, #314e52, #314e52, #314e52 14%, transparent 65%, #314e52, #314e52);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
+#mainNav nav div .navbar-nav .nav-reg {
+    color: #8E9DCC;
 }
 
 img::-moz-selection {
@@ -226,4 +219,97 @@ img::-moz-selection {
     padding: 0;
     border-radius: 0.5em;
     background: linear-gradient(#474747 -30%, transparent 75%, #80CED7);
+}
+
+.card-main {
+    padding: .5rem 1rem;
+}
+
+.middle {
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#card-title {
+    text-align: center;
+    margin: 1rem;
+}
+
+#card-title h2 {
+    font-family: 'Inter Bold', sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+}
+
+.card {
+    cursor: pointer;
+    width: 340px;
+    height: 430px;
+    background: transparent;
+    border: 0px;
+    border-radius: 0rem;
+    padding-left: 3rem;
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .4s linear;
+}
+
+.front img {
+    height: 100%;
+}
+
+.front {
+    background: linear-gradient(270deg, transparent -20%, white 85%, black calc(75% + 1px), black 100%);
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 8px 8px 50px #000;
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.front-content h2 {
+    font-size: 3rem;
+    letter-spacing: 10px;
+    font-family: 'Questrial', sans-serif;
+}
+
+.back {
+    background: #293033;
+    border: 1px solid #f2a154;
+    border-radius: 10px;
+    box-shadow: 8px 8px 50px #000;
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.back-content {
+    color: #f2a154;
+    text-align: center;
+    padding: .5rem;
+    width: 100%;
+}
+
+.back-content a {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.125rem;
+}
+
+.card:hover>.front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover>.back {
+    transform: perspective(600px) rotateY(0deg);
 }
