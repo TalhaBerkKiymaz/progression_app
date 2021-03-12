@@ -1,4 +1,6 @@
 <?php
+include("./functions.php");
+is_authorized(["admin", "teacher", "director",]);
 /**
  * Omschrijving: Deze pagina geeft alle vakken weer die gekoppeld zijn aan een klas.
  * Afhankelijk van: class_course/lessons    
@@ -38,7 +40,7 @@ while ($record = mysqli_fetch_assoc($result)) {
                 </h2>
                 <h5'>{$record['description']}</h5>
                 <hr>
-                <a href='index.php?content=student&class=$class_name&lesson={$record['lessons']}' class='btn btn-warning'>Vakken
+                <a href='index.php?content=student&class=$class_name&lesson={$record['lessons']}' class='btn btn-warning'>Overzicht
                 </a>
             </div>
         </div>

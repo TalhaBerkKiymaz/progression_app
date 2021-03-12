@@ -299,11 +299,11 @@ img::-moz-selection {
 }
 
 .back-content a {
-    width: 100px;
+    width: 130px;
     height: 40px;
     text-align: center;
     font-family: 'Questrial', sans-serif;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
 }
 
 .card:hover>.front {
