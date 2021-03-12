@@ -18,30 +18,41 @@ $sql = "SELECT  `course`.`description`,`course`.`course_name`, c.class_name, cc.
 
 $result = mysqli_query($conn, $sql);
 
-
 $show = "<div class='row'>";
 while ($record = mysqli_fetch_assoc($result)) {
     $show .= "
-            <div class='col-sm-6' style='padding-top: 20px;'>
-                    <div class='card'>
-                        <div class='card-body'>
-                            <h5 class='card-title'>{$record['lessons']}</h5>
-                            <p class='card-text'>{$record['course_name']}.</p>
-                            <p class='card-text'><b>{$record['description']}.</b></p>
-                            <p class='text-muted'>Klik hieronder om voortgang van studenten te zien</p>
-                            <a href='index.php?content=student&class=$class_name&lesson={$record['lessons']}' class='btn btn-warning'><b>Voortgang</b></a>
-                         </div>
-                    </div>
-            </div>";
+    <div class='col-3'>
+    <div class='card-main'>
+    
+    <div class='card'>
+        <div class='front'>
+            <div class='front-content middle'>
+                <h2>{$record['lessons']}</h3>
+            </div>
+        </div>
+        <div class='back'>
+            <div class='back-content middle'>
+                <h2>{$record['course_name']}<br><hr style='border: 2px solid;'>
+                <h3>Applicatie- en mediaontwikkelaar</h3>
+                <hr style='border: 2px solid;'>
+                </h2>
+                <h5'>{$record['description']}</h5>
+                <hr>
+                <a href='index.php?content=student&class=$class_name&lesson={$record['lessons']}' class='btn btn-warning'>Vakken
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>";
 
 //     var_dump($record);
 }
-
 mysqli_data_seek($result,0);
 $record = mysqli_fetch_assoc($result);
 // echo "============================";
 // var_dump($record);
 $class = $record["class_name"];
-echo "<h1 style='color: red;'>" . $class_name . "</h1>";
+echo "<h1 id='card-title'>" . $class_name . "</h1>";
 echo $show;
 ?>
