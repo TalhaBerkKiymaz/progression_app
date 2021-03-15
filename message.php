@@ -112,8 +112,14 @@
             header("Refresh: 3; ./index.php?content=home");
     break;
     case "auth-error-user" :
-      echo '<div class="alert alert-success mt-5 w-50 mx-auto text-center" role="alert">
+      echo '<div class="alert alert-warning mt-5 w-50 mx-auto text-center" role="alert">
               U heeft geen rechten op deze pagina, u wordt doorgestuurd naar de homepage....
+            </div>';
+            header("Refresh: 3; ./index.php?content=home");
+    break;
+    case "outside-org" :
+      echo '<div class="alert alert-danger mt-5 w-50 mx-auto text-center" role="alert">
+              U bent geen onderdeel van de organisatie van MBO Utrecht, u wordt doorgestuurd naar de homepage....
             </div>';
             header("Refresh: 3; ./index.php?content=home");
     break;

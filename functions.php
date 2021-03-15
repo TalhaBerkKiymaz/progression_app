@@ -37,4 +37,37 @@
       return true;
     }
   }
+
+  // function determine_userrole($email)
+  // {
+  //   global $conn;
+  //   $chop_email = explode("@", $email);
+
+  //   if (!strcmp("mboutrecht.nl", $chop_email[1])) {
+  //     // echo "docent";
+
+  //     $sql = "SELECT  `id` FROM `teacher` WHERE `id` = '$chop_email[0]'";
+  //     $result = mysqli_query($conn, $sql);
+  //     // teacher
+  //     if (mysqli_num_rows($result)) {
+  //       $userrole = "teacher";
+  //     } else {
+  //       header("Location: ./index.php?content=message&alert=outside-org");
+  //     }
+  //   }
+  //   // student
+  //   else if (!strcmp("student.mboutrecht.nl", $chop_email[1])) {
+  //     // echo "student";
+
+  //     $sql = "SELECT  `student_id` FROM `student` WHERE `student_id` = '$chop_email[0]'";
+  //     $result = mysqli_query($conn, $sql);
+  //     if (mysqli_num_rows($result)) {
+  //       $userrole = "student";
+  //     } else {
+  //       header("Location: ./index.php?content=message&alert=outside-org");
+  //     }
+  //   } else {
+  //     header("Location: ./index.php?content=message&alert=outside-org");
+  //   }
+  // }
 ?>
