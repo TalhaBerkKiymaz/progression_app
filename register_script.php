@@ -14,13 +14,14 @@ if (empty($_POST["email"])) {
   if (mysqli_num_rows($result)) {
     header("Location: ./index.php?content=message&alert=emailexists");
   } else {
+
     // voor en -na het @ bepalen student of teacher is.
     $chop_email = explode("@", $email);
 
     if (!strcmp("mboutrecht.nl", $chop_email[1])) {
       // echo "docent";
 
-      $sql = "SELECT  `id` FROM `teacher` WHERE `id` = '$chop_email[0]'";
+      $sql = "SELECT  `id` FROM `teachers` WHERE `id` = '$chop_email[0]'";
       $result = mysqli_query($conn, $sql);
       // teacher
       if (mysqli_num_rows($result)) {
@@ -32,7 +33,7 @@ if (empty($_POST["email"])) {
     else if (!strcmp("student.mboutrecht.nl", $chop_email[1])) {
       // echo "student";
 
-      $sql = "SELECT  `student_id` FROM `student` WHERE `student_id` = '$chop_email[0]'";
+      $sql = "SELECT  `student_id` FROM `students` WHERE `student_id` = '$chop_email[0]'";
       $result = mysqli_query($conn, $sql);
       if (mysqli_num_rows($result)) {
         $userrole = "student";
@@ -65,12 +66,13 @@ if (empty($_POST["email"])) {
       $id = mysqli_insert_id($conn);
 
       $mbo_id = explode("@", $email)[0];
-
+      // echo $mbo_id; exit();
       $tbl_name = $userrole . "s";
 
       $sql="UPDATE `{$tbl_name}`
             SET `register_id` = $id
             WHERE `id` = '{$mbo_id}'";
+            // echo $sql; exit();
 
       if(!mysqli_query($conn, $sql))
       {
@@ -78,7 +80,7 @@ if (empty($_POST["email"])) {
 
       } 
 
-
+      
       $to = $email;
       $subject = "Activatielink voor uw schoolaccount";
       // include("./email.php");
