@@ -1,42 +1,25 @@
-<?php
-    include("./connect_db.php");
-
-    $sql = "SELECT * FROM `assigments`";
-
-    $result = mysqli_query($conn, $sql);
-
-    $tbl_rows = "";
-    while ($record = mysqli_fetch_assoc($result)) {
-        $tbl_rows .= "<tr>
-                        <th scope='row'>{$record['id']}</th>
-                        <td>{$record['lessons']}</td>
-                        <td>{$record['description']}</td>
-                        <td>{$record['ddline_date']}</td>
-                        <td><i class='bi bi-pencil-square' style='color:blue;'></i></td>
-                        <td><i class='bi bi-x-square text-danger'></i></td>
-                    </tr>";
-    }
-?>
-
-<div class="row my-3">
-    <div class="col-12">
-        <button type="submit" class="btn btn-success btn-lg btn-block mt-4" >Voeg een nieuwe cursus toe</button>
-    </div>
+<div class="col-12">
+ <h3>Assigment toevoegen<h3>
 </div>
-<div class="row">
-    <div class="col-12" >
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Lesson</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Deadline</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php echo $tbl_rows; ?>
-            </tbody>
-        </table>
-    </div>
+<form action="./index.php?content=assigment_create" method="post">
+<div class="form-group">
+    <label for="lessons">id</label>
+    <input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id">
+    <small id="idHelp" class="form-text text-muted">Vul hier les in</small>
+
+    <label for="lessons">Lessons</label>
+    <input type="text" class="form-control" id="lessons" aria-describedby="lessonsHelp" name="lessons">
+    <small id="lessonsHelp" class="form-text text-muted">Vul hier les in</small>
+ 
+ 
+    <label for="description">Description</label>
+    <input type="text" class="form-control" id="description" aria-describedby="descriptionHelp" name="description">
+    <small id="descriptionHelp" class="form-text text-muted">Vul hier description in</small>
+
+    <label for="lastname">Deadline</label>
+    <input type="date" class="form-control" id="deadline" aria-describedby="deadlineHelp" name="deadline" >
+    <small id="deadlineHelp" class="form-text text-muted">Vul hier uw achternaam in.</small>
+  
+  <button type="submit" class="btn btn-primary">Versturen</button>
 </div>
+</form>

@@ -105,10 +105,16 @@ $active = (isset($_GET["content"])) ? $_GET["content"] : "";
             case 'teacher':
               // Maak hier de hyperlinks voor de gebruikersrol teacher
               echo '<li class="nav-item ';
-              echo ($active == "assigments toevoegen") ? "active" : "";
+              echo ($active == "assigment") ? "active" : "";
+              echo '">
+                      <a class="nav-link" href="./index.php?content=assigment">Assigment</a>
+                    </li>';
+              echo '<li class="nav-item ';
+              echo ($active == "assigment toevoegen") ? "active" : "";
               echo '">
                       <a class="nav-link" href="./index.php?content=assigment_tvg">Assigment Toevoegen</a>
                     </li>';
+
 
               break;
             case 'student':
