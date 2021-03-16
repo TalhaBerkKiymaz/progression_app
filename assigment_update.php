@@ -16,24 +16,29 @@ echo "</pre>";
 
 
 <form action="./index.php?content=assigment_update_script" method="post">
-<div class="form-group">
-    <label for="lessons">id</label>
-    <input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id" value="<?php echo $record['id']; ?>">
-    <small id="idHelp" class="form-text text-muted">Vul hier les in</small>
-
-    <label for="lessons">Lessons</label>
-    <input type="text" class="form-control" id="lessons" aria-describedby="lessonsHelp" name="lessons" value="<?php echo $record['lessons']; ?>">
-    <small id="lessonsHelp" class="form-text text-muted">Vul hier les in</small>
- 
- 
+  <div class="form-group form-group-tvg login-picture">
+    <h1>Edit Je Assigment</h1>
+    <label for="Hoofdstuk">Hoofdstuk</label>
+    <input type="text" class="form-control" id="id" placeholder="1.1, 2.1 & 3.4 enz." aria-describedby="idHelp" name="id" value="<?php echo $record['id']; ?>">
+    
+    <label for="lessons">Vakken</label>
+    <div class="box">
+      <select id="lessons" name="lessons" value="<?php echo $record['lessons']; ?>">
+        <option value="WEB">WEB</option>
+        <option value="NED">NED</option>
+        <option value="ENG">ENG</option>
+        <option value="BUR">BUR</option>
+        <option value="ASP">ASP</option>
+      </select>
+    </div>
+    
     <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" aria-describedby="descriptionHelp" name="description" value="<?php echo $record['description']; ?>">
-    <small id="descriptionHelp" class="form-text text-muted">Vul hier description in</small>
+    <input type="text" class="form-control" placeholder="Inhoud van de Opdracht " id="description" aria-describedby="descriptionHelp" name="description" value="<?php echo $record['description']; ?>">
+    
 
-    <label for="lastname">Deadline</label>
+    <label for="lastname">Deadline Datum</label>
     <input type="date" class="form-control" id="deadline" aria-describedby="deadlineHelp" name="deadline" value="<?php echo $record['ddline_date']; ?>">
-    <small id="deadlineHelp" class="form-text text-muted">Vul hier uw achternaam in.</small>
-  
-  <button type="submit" class="btn btn-primary">Versturen</button>
-</div>
+   
+    <button type="submit" class="btn btn-dark btn-lg btn-block mt-4">Updaten</button>
+  </div>
 </form>

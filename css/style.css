@@ -149,11 +149,16 @@ img::-moz-selection {
     color: #000;
     top: 100%;
     left: 50%;
-    /* padding: 60px 30px; */
     position: absolute;
-    transform: translate(-50%, 20%);
+    transform: translate(-50%, 10%);
     box-sizing: border-box;
     box-shadow: 8px 8px 50px #000;
+}
+
+.form-group-tvg {
+    width: 500px;
+    height: auto;
+    position: absolute;
 }
 
 .form-group h1 {
@@ -181,7 +186,7 @@ img::-moz-selection {
     width: 75%;
     margin-bottom: 10px;
     transform: translate(15%, 20%);
-    color: #F1F2EB;
+    color: rgb(27, 26, 26);
     font-family: 'Questrial', sans-serif;
     font-weight: normal;
     font-size: 20px;
@@ -245,6 +250,14 @@ img::-moz-selection {
     font-size: 2.3rem;
 }
 
+#card-title h3 {
+    font-family: 'Inter Bold', sans-serif;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    padding-top: 1.2rem;
+}
+
 .card {
     cursor: pointer;
     width: 340px;
@@ -252,7 +265,6 @@ img::-moz-selection {
     background: transparent;
     border: 0px;
     border-radius: 0rem;
-
 }
 
 .front,
@@ -312,4 +324,35 @@ img::-moz-selection {
 
 .card:hover>.back {
     transform: perspective(600px) rotateY(0deg);
+}
+
+
+/* assigment toevoegen select options */
+
+.box {
+    padding: .5rem 3.2rem;
+}
+
+.box select {
+    background-color: #0563af;
+    color: white;
+    padding: 9px;
+    width: 370px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
+.box select option {
+    padding: 30px;
+}
+
+#table-assigment {
+    background-color: #628395;
+    border-radius: 10px;
+    color: black;
+    text-transform: uppercase;
 }

@@ -28,12 +28,12 @@
 
 <div class="row my-3">
     <div class="col-12">
-        <a type="submit" href="./index.php?content=assigment_tvg" class="btn btn-success btn-lg btn-block mt-4" >Voeg een nieuwe cursus toe</a>
+        <a type="submit" href="./index.php?content=assigment_tvg" class="btn btn-dark btn-lg btn-block mt-4" >Voeg een nieuwe cursus toe</a>
     </div>
 </div>
 <div class="row">
     <div class="col-12" >
-        <table class="table table-hover">
+        <table class="table table-hover" id="table-assigment">
             <thead>
                 <tr>
                     <th scope="col">id</th>
