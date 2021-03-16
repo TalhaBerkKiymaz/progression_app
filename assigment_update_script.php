@@ -7,7 +7,7 @@
     $id = $_POST["id"];
     $lessons = sanitize($_POST["lessons"]);
     $description = sanitize($_POST["description"]);
-    $date = sanitize($_POST["ddline_date"]);
+    $date = sanitize($_POST["deadline"]);
 
     $sql = "UPDATE `assigments` 
                 SET `id` = '$id', 

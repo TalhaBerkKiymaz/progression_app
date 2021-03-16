@@ -11,10 +11,10 @@ $date = date("Y-m-d", strtotime($ddline_date));
 
 
 $query = "INSERT INTO `assigments` (`id`, `lessons`, `description`, `ddline_date`) VALUES ('$id', '$lessons', '$description', '$date')";
-
+// echo $query; exit ();
 
 mysqli_query($conn, $query); 
 
-
+header("Location: ./index.php?content=assigment");
 
 ?>

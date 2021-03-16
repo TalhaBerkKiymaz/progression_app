@@ -28,7 +28,7 @@
 
 <div class="row my-3">
     <div class="col-12">
-        <button type="submit" class="btn btn-success btn-lg btn-block mt-4" >Voeg een nieuwe cursus toe</button>
+        <a type="submit" href="./index.php?content=assigment_tvg" class="btn btn-success btn-lg btn-block mt-4" >Voeg een nieuwe cursus toe</a>
     </div>
 </div>
 <div class="row">
