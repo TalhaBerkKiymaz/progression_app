@@ -58,7 +58,7 @@ while ($record = mysqli_fetch_assoc($result)) {
 
 }
 
-mysqli_data_seek($result,0);
+mysqli_data_seek($result, 0);
 $record = mysqli_fetch_assoc($result);
 // echo "============================";
 // var_dump($record);
@@ -74,24 +74,23 @@ echo $show2;
 <div style="padding-top: 25px;">
   <!-- Op deze plek komt de tabel -->
   <form action="./index.php?content=student_points" method="post">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Naam</th>
-        <th scope="col">Tussenvoegsel</th>
-        <th scope="col">Achternaam</th>
-        <th scope="col">Progressie/Modul</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      echo $show;
-      ?>
-    </tbody>
-    
-  </table>
-  <button type='submit' class='btn btn-primary submit' style="align-items: right;">Opslaan</button>
-    </form>
-</div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Naam</th>
+          <th scope="col">Tussenvoegsel</th>
+          <th scope="col">Achternaam</th>
+          <th scope="col">Progressie/Modul</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        echo $show;
+        ?>
+      </tbody>
 
+    </table>
+    <button type='submit' class='btn btn-primary submit' style="align-items: right;">Opslaan</button>
+  </form>
+</div>

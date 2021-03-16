@@ -33,7 +33,7 @@ if (empty($_POST["email"])) {
     else if (!strcmp("student.mboutrecht.nl", $chop_email[1])) {
       // echo "student";
 
-      $sql = "SELECT  `student_id` FROM `students` WHERE `student_id` = '$chop_email[0]'";
+      $sql = "SELECT  `id` FROM `students` WHERE `id` = '$chop_email[0]'";
       $result = mysqli_query($conn, $sql);
       if (mysqli_num_rows($result)) {
         $userrole = "student";
@@ -72,7 +72,7 @@ if (empty($_POST["email"])) {
       $sql="UPDATE `{$tbl_name}`
             SET `register_id` = $id
             WHERE `id` = '{$mbo_id}'";
-            // echo $sql; exit();
+            // echo $sql; exit(); 
 
       if(!mysqli_query($conn, $sql))
       {

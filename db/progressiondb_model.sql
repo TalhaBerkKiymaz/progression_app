@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `progressionapp`.`register` (
   `user_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(100) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
-  `userrole` ENUM('admin', 'director', 'teachers', 'student') NOT NULL,
+  `userrole` ENUM('admin', 'director', 'teacher', 'student') NOT NULL,
   `activated` BIT(1) NOT NULL,
   PRIMARY KEY (`user_id`))
 ENGINE = InnoDB
@@ -160,12 +160,12 @@ DROP TABLE IF EXISTS `progressionapp`.`students` ;
 
 CREATE TABLE IF NOT EXISTS `progressionapp`.`students` (
   `register_id` INT(10) UNSIGNED NULL DEFAULT NULL,
-  `student_id` INT(6) NOT NULL AUTO_INCREMENT,
+  `id` INT(6) NOT NULL AUTO_INCREMENT,
   `class_name` VARCHAR(45) NOT NULL,
   `firstname` VARCHAR(45) NOT NULL,
   `infix` VARCHAR(10) NOT NULL,
   `lastname` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`student_id`),
+  PRIMARY KEY (`id`),
   CONSTRAINT `FK_students_PK_register`
     FOREIGN KEY (`register_id`)
     REFERENCES `progressionapp`.`register` (`user_id`)
@@ -246,25 +246,25 @@ COMMIT;
 START TRANSACTION;
 USE `progressionapp`;
 
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '329188', 'AM2A', 'Ahmet', '', 'Erdogan');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '568741', 'AM2A', 'Arjan', 'de', 'Ruijter');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '878787','AM2A', 'Hans', '', 'Odijk');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '415131','AM2A', 'Cuneyt', '', 'Sterk');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '986542','AM2B', 'Nalinie', '', 'Zwemmer');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '456123','AM2B', 'Yaron', 'van den', 'Nieuwenhuijzen');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '753951','AM2B', 'Ghizlan', 'van der', 'Zon');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '746321','AM2B', 'Tarik', '', 'Comolokko');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '784523','AM2B', 'Talha', '', 'Kiymaz');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '325485','AM1C', 'Orpheo ', '', 'Woortman');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '785429','AM1C', 'Julienne ', '', 'Sneekes');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '154892','AM1C', 'Berry', '', 'Schermer');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '254769','AM1C', 'Kristin ', '', 'Passchier');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '781594','AM1C', 'Pieterdina ', '', 'Boonzaaijer');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '987532','AM1D', 'Pip ', '', 'Creemers');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '158756','AM1D', 'Cherryl ', '', 'Pels');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '123489','AM1D', 'Sheryl ', '', 'Touissaint');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '178549','AM1D', 'Teis', 'van der', 'Wel');
-INSERT INTO `progressionapp`.`students` (`register_id`,`student_id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '987562','AM1D', 'Kenn', '', 'Perquin');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '329188', 'AM2A', 'Ahmet', '', 'Erdogan');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '568741', 'AM2A', 'Arjan', 'de', 'Ruijter');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '878787','AM2A', 'Hans', '', 'Odijk');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '415131','AM2A', 'Cuneyt', '', 'Sterk');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '986542','AM2B', 'Nalinie', '', 'Zwemmer');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '456123','AM2B', 'Yaron', 'van den', 'Nieuwenhuijzen');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '753951','AM2B', 'Ghizlan', 'van der', 'Zon');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '746321','AM2B', 'Tarik', '', 'Comolokko');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '784523','AM2B', 'Talha', '', 'Kiymaz');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '325485','AM1C', 'Orpheo ', '', 'Woortman');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '785429','AM1C', 'Julienne ', '', 'Sneekes');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '154892','AM1C', 'Berry', '', 'Schermer');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '254769','AM1C', 'Kristin ', '', 'Passchier');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '781594','AM1C', 'Pieterdina ', '', 'Boonzaaijer');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '987532','AM1D', 'Pip ', '', 'Creemers');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '158756','AM1D', 'Cherryl ', '', 'Pels');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '123489','AM1D', 'Sheryl ', '', 'Touissaint');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '178549','AM1D', 'Teis', 'van der', 'Wel');
+INSERT INTO `progressionapp`.`students` (`register_id`,`id`, `class_name`, `firstname`, `infix`, `lastname`) VALUES (NULL, '987562','AM1D', 'Kenn', '', 'Perquin');
 
 COMMIT;
 
