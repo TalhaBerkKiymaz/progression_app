@@ -15,6 +15,6 @@ $query = "INSERT INTO `assigments` (`id`, `lessons`, `description`, `ddline_date
 
 mysqli_query($conn, $query); 
 
-header("Location: ./index.php?content=assigment");
+header("Location: ./index.php?content=message&alert=assigment-add-success");
 
 ?>

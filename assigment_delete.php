@@ -8,5 +8,5 @@
 
     mysqli_query($conn, $sql);
 
-    header("Location: ./index.php?content=assigment");
+    header("Location: ./index.php?content=message&alert=assigment-delete-success");
 ?>

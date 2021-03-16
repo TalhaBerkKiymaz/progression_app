@@ -24,6 +24,7 @@ echo "</pre>";
     <label for="lessons">Vakken</label>
     <div class="box">
       <select id="lessons" name="lessons" value="<?php echo $record['lessons']; ?>">
+      <option value="<?php echo $record['lessons']; ?>" disabled selected><?php echo $record['lessons']; ?> (Selected)</option>
         <option value="WEB">WEB</option>
         <option value="NED">NED</option>
         <option value="ENG">ENG</option>
