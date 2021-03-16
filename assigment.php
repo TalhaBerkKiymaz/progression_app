@@ -12,8 +12,16 @@
                         <td>{$record['lessons']}</td>
                         <td>{$record['description']}</td>
                         <td>{$record['ddline_date']}</td>
-                        <td><i class='bi bi-pencil-square' style='color:blue;'></i></td>
-                        <td><i class='bi bi-x-square text-danger'></i></td>
+                        <td>
+                            <a href='./index.php?content=assigment_update&id=" . $record["id"] . "'>
+                                <img src='./img/icons/b_edit.png' alt=; pencil'>
+                        </a>
+                        </td>
+                        <td>
+                            <a href='./index.php?content=assigment_delete&id=" . $record["id"] . "'>
+                                <img src='./img/icons/b_drop.png' alt=; cross'>
+                            </a>
+                        </td>
                     </tr>";
     }
 ?>

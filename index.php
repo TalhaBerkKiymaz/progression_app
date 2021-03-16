@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <link rel="shortcut icon" href="./img/icons/favicon.png" type="image/x-icon">
-    <title>Vegetable Juice</title>
+    <title>Progression App</title>
   </head>
   <body>
     <main>
