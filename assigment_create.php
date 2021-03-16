@@ -15,4 +15,6 @@ $query = "INSERT INTO `assigments` (`id`, `lessons`, `description`, `ddline_date
 
 mysqli_query($conn, $query); 
 
+
+
 ?>
