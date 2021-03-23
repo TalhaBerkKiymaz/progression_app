@@ -127,19 +127,19 @@
       echo '<div class="alert alert-success mt-5 w-50 mx-auto text-center" role="alert">
             De sessie is gelukt, u wordt doorgestuurd naar de assigment pagina...
             </div>';
-            header("Refresh: 3; ./index.php?content=assigment");
+            header("Refresh: 2; ./index.php?content=assigment");
     break;
     case "assigment-add-success" :
       echo '<div class="alert alert-success mt-5 w-50 mx-auto text-center" role="alert">
             Assigment is toegevoegd, u wordt doorgestuurd naar de assigment pagina...
             </div>';
-            header("Refresh: 3; ./index.php?content=assigment");
+            header("Refresh: 2; ./index.php?content=assigment");
     break;
     case "assigment-delete-success" :
       echo '<div class="alert alert-success mt-5 w-50 mx-auto text-center" role="alert">
            Assigment is verwijderd, u wordt doorgestuurd naar de assigment pagina...
             </div>';
-            header("Refresh: 3; ./index.php?content=assigment");
+            header("Refresh: 1; ./index.php?content=assigment");
     break;
     default:
       header("Location: ./index.php?content=home");

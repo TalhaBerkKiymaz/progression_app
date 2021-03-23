@@ -1,6 +1,6 @@
 <form action="./index.php?content=assigment_create" method="post">
   <div class="form-group form-group-tvg login-picture">
-    <h1>Assigment Toevoegen</h1>
+    <h1>Opdracht Toevoegen</h1>
     <label for="Hoofdstuk">Hoofdstuk</label>
     <input type="text" class="form-control" id="id" placeholder="1.1, 2.1 & 3.4 enz." aria-describedby="idHelp" name="id">
     

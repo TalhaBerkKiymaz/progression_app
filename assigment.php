@@ -28,7 +28,7 @@
 
 <div class="row my-3">
     <div class="col-12">
-        <a type="submit" href="./index.php?content=assigment_tvg" class="btn btn-dark btn-lg btn-block mt-4" >Voeg een nieuwe cursus toe</a>
+        <a type="submit" href="./index.php?content=assigment_tvg" class="btn btn-dark btn-lg btn-block mt-4" >Voeg een nieuwe opdracht toe</a>
     </div>
 </div>
 <div class="row">
@@ -36,10 +36,10 @@
         <table class="table table-hover" id="table-assigment">
             <thead>
                 <tr>
-                    <th scope="col">id</th>
+                    <th scope="col">hoofdstuk</th>
                     <th scope="col">lessons</th>
                     <th scope="col">description</th>
-                    <th scope="col">ddline_date</th>
+                    <th scope="col">deadline</th>
                 </tr>
             </thead>
             <tbody>
