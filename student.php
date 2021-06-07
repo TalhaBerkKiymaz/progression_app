@@ -20,17 +20,13 @@ $lessons = $_GET["lesson"];
 
 include("./connect_db.php");
 
-$sql = "SELECT
-       asi.id as assigmentid, asi.description, asi.ddline_date, p.pointurl, p.description as pdescription,
-       `course`.`course_name`, s.class_name, `course`.`lessons`, 
-       s.id, s.firstname, s.infix, s.lastname 
-       from class_course as cc, class as c, students as s, course, assigments as asi inner join points as p
-       on p.id = asi.result
-       where `course`.`lessons` = '" . $lessons  . "'
-       and s.`class_name` = '" . $class_name  . "' 
-       GROUP BY s.id";
+$sql = "SELECT ass_id, student_id, result, `course`.`course_name`, s.`class_name`, ass.`lessons`
+        FROM assigments_points,  students as s, assigments as ass, 
+        where ass.`lessons` = '" . $lessons  . "'
+        and s.`class_name` = '" . $class_name  . "' 
+        GROUP BY s.id";
 
-// echo$sql;exit();
+echo$sql;exit();
 $result = mysqli_query($conn, $sql);
 // var_dump($result);
 $show = "<div class='row'>";
