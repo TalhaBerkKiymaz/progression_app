@@ -21,36 +21,31 @@ $lessons = $_GET["lesson"];
 include("./connect_db.php");
 
 $sql = "SELECT
-       `course`.`course_name`, s.class_name, `course`.`lessons`, s.student_id, s.firstname, s.infix, s.lastname 
-       from class_course as cc, class as c, student as s, course 
+       asi.id as assigmentid, asi.description, asi.ddline_date, p.pointurl, p.description as pdescription,
+       `course`.`course_name`, s.class_name, `course`.`lessons`, 
+       s.id, s.firstname, s.infix, s.lastname 
+       from class_course as cc, class as c, students as s, course, assigments as asi inner join points as p
+       on p.id = asi.result
        where `course`.`lessons` = '" . $lessons  . "'
        and s.`class_name` = '" . $class_name  . "' 
-       GROUP BY s.student_id";
+       GROUP BY s.id";
 
 // echo$sql;exit();
 $result = mysqli_query($conn, $sql);
 // var_dump($result);
 $show = "<div class='row'>";
 while ($record = mysqli_fetch_assoc($result)) {
+  $assigmentid = $record['assigmentid'];
+  $pdescription = $record['pdescription'];
   $show .= "
   <tr>
-    <th scope='row'> {$record['student_id']} </th>
+    <th scope='row'> {$record['id']} </th>
     <td> {$record['firstname']} </td>
-    <td> {$record['infix']} </td>
-    <td> {$record['lastname']} </td>
-    <td> <select name='voortgang' id='voortgang'>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
-          <option value='5'>5</option>
-          <option value='6'>6</option>
-          <option value='7'>7</option>
-          <option value='8'>8</option>
-          <option value='9'>9</option>
-          <option value='10'>10</option>
-          </select>
-    </td>
+    <td> {$assigmentid} </td>
+    <td> {$record['description']} </td>
+    <td> 
+          <img src='./img/results/{$record['pointurl']}' title='$pdescription'>
+         </td>
     </tr>
     ";
 
@@ -65,8 +60,8 @@ $record = mysqli_fetch_assoc($result);
 $course = $record["course_name"];
 // var_dump($course);
 $show2 = "<div class='container'>";
-$show2 .= " <div style='padding-top: 75px;'>
-<h2> $class_name <br> <h4>Vak: $lessons </h4> <h5>Cursus naam: $course </h5>  </h2>";
+$show2 .= " <div class='table-cover'>
+<div  style='color:whitesmoke;'><h2  style='color:#fed136; '> $class_name - Opdrachten <br><br> <h4>Vak: $lessons </h4> <h5>Cursus naam: $course </h5>  </h2></div>";
 echo $show2;
 // echo $show;
 ?>
@@ -77,11 +72,11 @@ echo $show2;
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">ID</th>
+          <th scope="col" ><a style="color: #fed136; text-decoration:none;" href="#">StudentID</a></th>
           <th scope="col">Naam</th>
-          <th scope="col">Tussenvoegsel</th>
-          <th scope="col">Achternaam</th>
-          <th scope="col">Progressie/Modul</th>
+          <th scope="col">Hoofdstuk</th>
+          <th scope="col">Omschrijving</th>
+          <th scope="col">Resultaat</th>
         </tr>
       </thead>
       <tbody>

@@ -356,3 +356,15 @@ img::-moz-selection {
     color: black;
     text-transform: uppercase;
 }
+
+
+/* Student */
+
+.table-cover {
+    margin: 2em;
+    padding: 3em;
+    background: linear-gradient(#474747 20%, whitesmoke 80%, transparent 90%, #80CED7);
+    border: 1px solid #fed136;
+    border-radius: 25px;
+    font-family: 'Questrial', sans-serif;
+}
