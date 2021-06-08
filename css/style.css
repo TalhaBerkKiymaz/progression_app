@@ -363,8 +363,8 @@ img::-moz-selection {
 .table-cover {
     margin: 2em;
     padding: 3em;
-    background: linear-gradient(#474747 20%, whitesmoke 80%, transparent 90%, #80CED7);
-    border: 1px solid #fed136;
+    background: linear-gradient(#474747 20%, whitesmoke 90%);
+    border: 1px solid #80CED7;
     border-radius: 25px;
     font-family: 'Questrial', sans-serif;
 }
