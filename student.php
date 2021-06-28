@@ -29,7 +29,13 @@ inner join course as c on c.lessons = ass.lessons
 WHERE ass.lessons = '" . $lessons  . "' and s.class_name = '" . $class_name  . "';";
 
 // echo$sql;exit();
+
+
 $result = mysqli_query($conn, $sql);
+
+if (empty($result)){
+  header("Location: ./index.php?content=message&alert=no-opdracht");
+}else{
 // var_dump($result);
 $show = "<div class='row'>";
 while ($record = mysqli_fetch_assoc($result)) {
@@ -73,6 +79,7 @@ $show2 .= " <div class='table-cover'>
 <div  style='color:whitesmoke;'><h2  style='color:#fed136; '> $class_name - Opdrachten <br><br> <h4>Vak: $lessons </h4> <h5>Cursus naam: $course </h5>  </h2></div>";
 echo $show2;
 // echo $show;
+}
 ?>
 
 <div style="padding-top: 25px;">

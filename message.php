@@ -135,6 +135,12 @@
             </div>';
             header("Refresh: 2; ./index.php?content=assigment");
     break;
+    case "no-opdracht" :
+      echo '<div class="alert alert-success mt-5 w-50 mx-auto text-center" role="alert">
+            Er is geen assigment beschikbaar op dit moment voor deze klas, u wordt doorgestuurd naar de assigment pagina...
+            </div>';
+            header("Refresh: 3; ./index.php?content=class");
+    break;
     case "assigment-delete-success" :
       echo '<div class="alert alert-success mt-5 w-50 mx-auto text-center" role="alert">
            Assigment is verwijderd, u wordt doorgestuurd naar de assigment pagina...
